@@ -6,6 +6,7 @@ import { CreateTodoUseCase } from './core/use-cases/todo/create-todo.use-case';
 import { UpdateTodoUseCase } from './core/use-cases/todo/update-todo-use-case';
 import { GetAllTodoUseCase } from './core/use-cases/todo/find-all-todo-use-case';
 import { FindOneTodoUseCase } from './core/use-cases/todo/find-one-todo-use-case';
+import { DeleteTodoUseCase } from './core/use-cases/todo/delete-todo-use-case';
 
 @Module({
   imports: [],
@@ -21,6 +22,7 @@ import { FindOneTodoUseCase } from './core/use-cases/todo/find-one-todo-use-case
     UpdateTodoUseCase,
     GetAllTodoUseCase,
     FindOneTodoUseCase,
+    DeleteTodoUseCase,
   ],
 })
 export class AppModule {}
