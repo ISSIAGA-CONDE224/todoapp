@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { CreateTodoDto } from '../dtos/create-todo.dto';
 import { CreateTodoUseCase } from 'src/core/use-cases/todo/create-todo.use-case';
 import { UpdateTodoUseCase } from 'src/core/use-cases/todo/update-todo-use-case';
@@ -6,6 +14,7 @@ import { UpdateTodoDto } from '../dtos/update-todo.dto';
 import { GetAllTodoUseCase } from 'src/core/use-cases/todo/find-all-todo-use-case';
 import { TodoViewModel } from '../view-models/todo.view-model';
 import { FindOneTodoUseCase } from 'src/core/use-cases/todo/find-one-todo-use-case';
+import { DeleteTodoUseCase } from 'src/core/use-cases/todo/delete-todo-use-case';
 
 @Controller('todos')
 export class TodoController {
@@ -14,6 +23,7 @@ export class TodoController {
     private readonly updateTodoUseCase: UpdateTodoUseCase,
     private readonly getAllTodoUseCase: GetAllTodoUseCase,
     private readonly findOneTodoUseCase: FindOneTodoUseCase,
+    private readonly deleteTodoUseCase: DeleteTodoUseCase,
   ) {}
   @Get()
   async getAllTodos() {
@@ -37,5 +47,10 @@ export class TodoController {
   async findTodoById(@Param('id') id: string) {
     const todo = await this.findOneTodoUseCase.execute(Number(id));
     return TodoViewModel.toViewModel(todo);
+  }
+
+  @Delete(':id')
+  async deleteTodo(@Param('id') id: string) {
+    return await this.deleteTodoUseCase.execute(Number(id));
   }
 }
