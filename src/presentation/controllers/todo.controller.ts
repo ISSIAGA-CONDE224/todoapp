@@ -8,13 +8,13 @@ import {
   Put,
 } from '@nestjs/common';
 import { CreateTodoDto } from '../dtos/create-todo.dto';
-import { CreateTodoUseCase } from 'src/core/use-cases/todo/create-todo.use-case';
-import { UpdateTodoUseCase } from 'src/core/use-cases/todo/update-todo-use-case';
+import { UpdateTodoUseCase } from '../../core/use-cases/todo/update-todo-use-case';
 import { UpdateTodoDto } from '../dtos/update-todo.dto';
-import { GetAllTodoUseCase } from 'src/core/use-cases/todo/find-all-todo-use-case';
+import { GetAllTodoUseCase } from '../../core/use-cases/todo/find-all-todo-use-case';
 import { TodoViewModel } from '../view-models/todo.view-model';
-import { FindOneTodoUseCase } from 'src/core/use-cases/todo/find-one-todo-use-case';
-import { DeleteTodoUseCase } from 'src/core/use-cases/todo/delete-todo-use-case';
+import { FindOneTodoUseCase } from '../../core/use-cases/todo/find-one-todo-use-case';
+import { DeleteTodoUseCase } from '../../core/use-cases/todo/delete-todo-use-case';
+import { CreateTodoUseCase } from '../../core/use-cases/todo/create-todo-use-case';
 
 @Controller('todos')
 export class TodoController {

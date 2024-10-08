@@ -1,7 +1,7 @@
 // test/core/use-cases/create-todo.use-case.spec.ts
 
 import { Test, TestingModule } from '@nestjs/testing';
-import { CreateTodoUseCase } from '../../../src/core/use-cases/todo/create-todo.use-case';
+import { CreateTodoUseCase } from '../../../src/core/use-cases/todo/create-todo-use-case';
 import { ITodoRepository } from '../../../src/core/domain/repositories/todo.repository.interface';
 
 describe('CreateTodoUseCase', () => {
